@@ -25,4 +25,9 @@ class AdminController extends Controller
     public function dashboard(){
         return view('admin.dashboard');
     }
+
+    public function logout(){
+        Session::flush();
+        return redirect('/admin')->with('flash_message_success','Logged out Successfully');
+    }
 }
